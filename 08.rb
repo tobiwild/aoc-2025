@@ -22,9 +22,9 @@ p2 = nil
 dists.each_with_index do |(_dist, i, j), iteration|
   if iteration == 1000
     p1 = cs
-         .sort_by(&:size)
-         .slice(-3..)
          .map(&:size)
+         .sort
+         .last(3)
          .reduce(:*)
   end
   v1 = vecs[i]
